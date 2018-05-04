@@ -1,4 +1,5 @@
-import Component, { tracked  } from '@glimmer/component'
+import Component, { tracked } from '@glimmer/component'
+import store from '../../../utils/store'
 
 export default class WebSocketConnection extends Component {
   @tracked currentMessage = {}
@@ -10,7 +11,7 @@ export default class WebSocketConnection extends Component {
   }
 
   updateCurrentMessage({ data }) {
-    console.log('message', data)
     this.currentMessage = JSON.parse(data)
+    store.getActions('planet').updatePlanet(this.currentMessage)
   }
 }

@@ -1,0 +1,8 @@
+<ul class="css-slots">
+  {{#each siths key="@id" as |sith|}}
+    <li class="css-slot">
+      <h3>{{sith.name}}</h3>
+      <h6>Homeworld: {{sith.homeworld.name}}</h6>
+    </li>
+  {{/each}}
+</ul>
